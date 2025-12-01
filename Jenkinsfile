@@ -29,7 +29,7 @@ pipeline {
       }
       post {
         always {
-          junit 'test-reports/*.xml'
+          junit 'variant_tests/test-reports/*.xml'
         }
         success {
           echo 'Tests passed!'
