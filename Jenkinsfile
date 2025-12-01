@@ -25,7 +25,7 @@ pipeline {
         sh 'apk add --no-cache build-base'
         sh 'pip install xmlrunner'
         sh 'mkdir -p test-reports'
-        sh 'python3 notebook_tests.py'
+        sh 'cd variant_tests && python3 notebook_tests.py'
       }
       post {
         always {
