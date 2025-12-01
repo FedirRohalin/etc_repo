@@ -84,4 +84,7 @@ class TestPriorityNoteQueue(unittest.TestCase):
             Note(12345, "Це число, а не дата")
 
 if __name__ == '__main__':
+    import xmlrunner 
+    runner = xmlrunner.XMLTestRunner(output='test-reports')
+    unittest.main(testRunner=runner)
     unittest.main()
