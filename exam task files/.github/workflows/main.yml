@@ -2,9 +2,9 @@ name: Python CI/CD
 
 on:
   push:
-    branches: [ "exam_TP_branch" ] 
+    branches: [ "exam_TP_branch" ]
   pull_request:
-    branches: [ "exam_TP_branch" ] 
+    branches: [ "exam_TP_branch" ]
 
 jobs:
   build-and-test:
@@ -31,7 +31,6 @@ jobs:
   push-to-dockerhub:
     needs: build-and-test
     runs-on: ubuntu-latest
-
     if: github.ref == 'refs/heads/exam_TP_branch'
 
     steps:
@@ -41,7 +40,7 @@ jobs:
     - name: Login to DockerHub
       uses: docker/login-action@v2
       with:
-        username: laem7  
+        username: laem7
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build and push Docker image
@@ -49,4 +48,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: laem7/arithmetic-app:latest  
+        tags: laem7/arithmetic-app:latest
